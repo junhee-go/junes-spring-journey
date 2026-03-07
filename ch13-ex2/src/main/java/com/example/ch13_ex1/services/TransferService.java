@@ -33,8 +33,10 @@ public class TransferService {
 
         // 출금 계좌에 새 금액 설정
         accountRepository.changeAmount(idSender, senderNewAmount);
-        // 입금 계좌에 새 금액 설정
         accountRepository.changeAmount(idReceiver, receiverNewAmount);
+
+        // 메서드 실행 중 런타임 예외 던짐!
+        throw new RuntimeException("Something went wrong");
     }
 
     public List<Account> getAllAccounts() {
